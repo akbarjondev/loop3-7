@@ -17,6 +17,7 @@ body {
 	width: 950px;
 	margin: 0 auto;
 	margin-top: 30px;
+	margin-bottom: 30px;
 	padding: 25px;
 	background-color: #25262c;
 	border-radius: 5px;
@@ -73,6 +74,12 @@ body {
 	height: 50px;
 	border-radius: 50%;
 	color: #707070;
+	transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.main-button:hover {
+	border-color: #ffffff;
+	color: #ffffff;
 }
 
 .main-button i {
@@ -99,12 +106,71 @@ body {
 	display: flex;
   flex-direction: column;
   align-items: center;
+  margin: -15px;
+  padding-bottom: 50px;
+  transform: perspective(600px) rotateX(20deg);
 }
 
 .first-row {
 	display: flex;
 }
+	
+	.row__first::before {
+		content: "1";
+		font-weight: 500;
+		color: #cccccc;
+		margin-right: 55px;
+	}
 
+	.row__first::after {
+		content: "1";
+		font-weight: 500;
+		color: #cccccc;
+		margin-left: 55px;
+	}
+
+	.row__second::before {
+		content: "2";
+		font-weight: 500;
+		color: #cccccc;
+		margin-right: 55px;
+	}
+
+	.row__second::after {
+		content: "2";
+		font-weight: 500;
+		color: #cccccc;
+		margin-left: 55px;
+	}
+
+	.row__third::before {
+		content: "3";
+		font-weight: 500;
+		color: #cccccc;
+		margin-right: 55px;
+	}
+
+	.row__third::after {
+		content: "3";
+		font-weight: 500;
+		color: #cccccc;
+		margin-left: 55px;
+	}
+
+	.row__fourth::before {
+		content: "4";
+		font-weight: 500;
+		color: #cccccc;
+		margin-right: 55px;
+	}
+
+	.row__fourth::after {
+		content: "4";
+		font-weight: 500;
+		color: #cccccc;
+		margin-left: 55px;
+	}
+	
 .label {
   position: relative;
   margin-left: 30px;
@@ -116,6 +182,15 @@ body {
   -ms-user-select: none;
   user-select: none;
 }
+	
+	.label:hover .check::before {
+		opacity: 1;
+		transform: scale(1.2);
+	}
+
+	.label:hover .check {
+		font-size: 14px;
+	}
 
 .label:first-child {
 	margin: 0;
@@ -130,17 +205,142 @@ body {
 }
 
 .form-input:checked + .check{
+	font-size: 14px;
 	background-color: #9c36b5;
 }
 
+.form-input:disabled + .check{
+	background-color: #aaaaaa;
+}
+
 .check {
-  display: block;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0px;
   height: 30px;
   width: 30px;
   border-radius: 50%;
   background-color: #4eaaff;
+  transition: font-size 0.3s ease;
 }
+
+	.check::before {
+		position: absolute;
+		top: -4px;
+		right: -4px;
+		bottom: -4px;
+		left: -4px;
+		border: 1px solid #4eaaff;
+		border-radius: 50%;
+		content: "";
+		opacity: 0;
+		transition: opacity 0.3s ease, transform 0.3s ease;
+	}
+
+	.check.vip-seat::before {
+		border: 1px solid #66d258;
+	}
+
+	.check.vip-seat::after {
+		position: absolute;
+		top: 0;
+		right: 0;
+		content: "";
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		background-color: #7fff00;
+		z-index: 10;
+		opacity: 0;
+	}
+
+	.form-input:checked + .check.vip-seat::after {
+		opacity: 1;
+	}
 
 .vip + .check {
 	background-color: #66d258;
 }
+
+.form-footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 25px;
+	border-top: 1px solid #707070;
+}
+
+.footer-left {
+	display: flex;
+}
+
+.footer-text {
+	font-size: 15px;
+	font-weight: 500;
+	opacity: 0.8;
+}
+
+.standart-text {
+	display: flex;
+	align-items: center;
+}
+
+	.standart-text::before {
+		content: "";
+		width: 8px;
+		height: 8px;
+		margin-right: 8px;
+		background-color: #4eaaff;
+		border-radius: 50%;
+	}
+
+.vip-text {
+	display: flex;
+	align-items: center;
+	margin: auto 35px;
+}
+
+	.vip-text::before {
+		content: "";
+		width: 8px;
+		height: 8px;
+		margin-right: 8px;
+		background-color: #66d258;
+		border-radius: 50%;
+	}
+
+.booked-text {
+	display: flex;
+	align-items: center;
+}
+	
+	.booked-text::before {
+		content: "";
+		width: 8px;
+		height: 8px;
+		margin-right: 8px;
+		background-color: #aaaaaa;
+		border-radius: 50%;
+	}
+
+.footer-button {
+	border-radius: 5px;
+	padding: 10px 40px;
+	color: #ffffff;
+	font-weight: 700;
+	text-transform: uppercase;
+	background-color: #4eaaff;
+	border: none;
+	cursor: pointer;
+	transition: transform 0.1s ease; 
+}
+
+	.footer-button:hover {
+		transform: scale(1.02);
+	}
+
+	.footer-button:active {
+		transform: scale(0.98);
+	}
