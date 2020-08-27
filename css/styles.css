@@ -1,0 +1,146 @@
+/*styles*/
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Roboto", "Arial", sans-serif;
+	box-sizing: border-box;
+	background-color: #2c3e50;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+.main {
+	width: 950px;
+	margin: 0 auto;
+	margin-top: 30px;
+	padding: 25px;
+	background-color: #25262c;
+	border-radius: 5px;
+	color: #ffffff;
+}
+
+.main-top {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	padding-bottom: 25px;
+	border-bottom: 1px solid #707070;
+}
+
+.main-heading {
+	margin: 0;
+}
+
+.main-text {
+	margin: 0;
+	margin-top: 5px;
+	font-weight: 500;
+	opacity: 0.6;
+}
+
+.main-time {
+	margin-top: 25px;
+	margin-bottom: 0;
+	font-weight: 500;
+}
+
+.main-middle {
+	flex-grow: 1;
+	margin-left: 15px;
+}
+
+.main-middle span {
+	display: inline-block;
+	background-color: #707070;
+	color: #ffffff;
+	font-weight: 700;
+	padding: 7px;
+	border-radius: 3px;
+}
+
+.three-d {
+	text-transform: uppercase;
+}
+
+.main-button {
+	background: none;
+	border: 2px solid #707070;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	color: #707070;
+}
+
+.main-button i {
+	display: block;
+	font-size: 30px;
+}
+
+/*main-body*/
+
+.form-top {
+	margin: 20px auto;
+	width: 80%;
+	height: 160px;
+	background-image: url("../img/screen.jpg");
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	-webkit-background-size: cover;
+	background-size: cover;
+	box-shadow: 0 -80px 62px -47px rgba(255, 255, 255, 0.5);
+	transform: perspective(2000px) rotateX(120deg);
+}
+
+.form-body {
+	display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.first-row {
+	display: flex;
+}
+
+.label {
+  position: relative;
+  margin-left: 30px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.label:first-child {
+	margin: 0;
+}
+
+.form-input {
+	position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.form-input:checked + .check{
+	background-color: #9c36b5;
+}
+
+.check {
+  display: block;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #4eaaff;
+}
+
+.vip + .check {
+	background-color: #66d258;
+}
