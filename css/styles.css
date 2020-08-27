@@ -77,9 +77,11 @@ body {
 	transition: border-color 0.3s ease, color 0.3s ease;
 }
 
-.main-button:hover {
+.main-button:hover,
+.main-button:focus {
 	border-color: #ffffff;
 	color: #ffffff;
+	outline: none;
 }
 
 .main-button i {
@@ -204,13 +206,17 @@ body {
   width: 0;
 }
 
-.form-input:checked + .check{
+.form-input:checked + .check {
 	font-size: 14px;
 	background-color: #9c36b5;
 }
 
-.form-input:disabled + .check{
+.form-input:disabled + .check {
 	background-color: #aaaaaa;
+}
+
+.form-input:focus + .check {
+	background-color: #e8590c;
 }
 
 .check {
@@ -337,7 +343,8 @@ body {
 	transition: transform 0.1s ease; 
 }
 
-	.footer-button:hover {
+	.footer-button:hover,
+	.footer-button:focus {
 		transform: scale(1.02);
 	}
 
